@@ -1,0 +1,210 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+
+:root {
+  --bright-blue: hsl(220, 98%, 61%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(233, 11%, 84%);
+  --dark-grayish-blue: hsl(236, 9%, 61%);
+  --very-dark-grayish-blue: hsl(235, 19%, 35%);
+}
+[data-theme="dark"] {
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --light-grayish-blue-hover: hsl(236, 33%, 92%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+}
+html {
+  font-family: "Josefin Sans", sans-serif;
+}
+body {
+  height: 100vh;
+}
+header,
+main,
+footer {
+  padding-inline: 6%;
+}
+header {
+  background-image: url("../img/bg-mobile-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  color: var(--very-light-gray);
+}
+header img {
+  cursor: pointer;
+}
+#title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 48px 32px;
+}
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  font-size: 28px;
+}
+#newTodo {
+  display: flex;
+  align-items: center;
+  padding: 4px 15px 4px 18px;
+  background-color: var(--very-dark-desaturated-blue);
+  border-radius: 6px;
+}
+input[type="text"] {
+  flex: 1;
+  margin-right: auto;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: inherit;
+  color: var(--light-grayish-blue);
+  border: none;
+  padding-inline: 16px;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  caret-color: var(--bright-blue);
+}
+header button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--very-dark-desaturated-blue);
+  color: var(--light-grayish-blue);
+  border: none;
+  padding-inline: 0;
+  font-size: 36px;
+  cursor: pointer;
+}
+input:focus-visible,
+button {
+  outline: none;
+}
+.buttons > article {
+  justify-content: center;
+  background-color: var(--very-dark-desaturated-blue);
+}
+.buttons button,
+.info button {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: var(--very-dark-desaturated-blue);
+  color: var(--dark-grayish-blue);
+  cursor: pointer;
+  border: none;
+}
+.buttons button {
+  padding-right: 16px;
+  font-size: 16px;
+}
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-align: center;
+  background-color: inherit;
+  border: 1px solid var(--dark-grayish-blue);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked {
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+input[type="checkbox"]:checked::before {
+  content: url("../img/icon-check.svg");
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  height: 100%;
+  align-items: center;
+}
+main,
+footer,
+body {
+  background-color: var(--very-dark-blue);
+}
+
+main > ul > :not(:last-child),
+.buttons {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+main > ul {
+  position: relative;
+  top: -30px;
+}
+main li {
+  background-color: var(--very-dark-desaturated-blue);
+}
+.task {
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--very-dark-grayish-blue);
+}
+
+main article {
+  display: flex;
+  align-items: center;
+}
+main img {
+  cursor: pointer;
+  width: 14px;
+}
+.info {
+  padding: 18px 18px;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  font-size: 14px;
+  color: var(--dark-grayish-blue);
+}
+.info > article {
+  justify-content: space-between;
+}
+.task:first-child {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 16px 16px;
+  color: var(--dark-grayish-blue);
+  font-size: 16px;
+}
+.taskFinish input[type="text"] {
+  text-decoration: line-through;
+  color: var(--dark-grayish-blue);
+}
+.buttons .btnActive {
+  color: var(--bright-blue);
+}
+.buttons {
+  padding: 16px 18px;
+  margin-top: 16px;
+  border-radius: 6px;
+}
+input[type="checkbox"]:hover {
+  border: double 2px transparent;
+  border-radius: 50%;
+  background-image: linear-gradient(
+      var(--very-dark-desaturated-blue),
+      var(--very-dark-desaturated-blue)
+    ),
+    radial-gradient(circle at top left, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+button:hover {
+  color: aliceblue;
+}
+.hidden {
+  display: none;
+}

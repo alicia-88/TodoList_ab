@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./public/assets/css/style.css" />
+    <script src="./public/assets/js/main.js" type="module" defer></script>
+    <title>ToDo List</title>
+  </head>
+  <body>
+    <header>
+      <div id="title">
+        <h1>Todo</h1>
+        <p><img src="./public/assets/img/icon-sun.svg" alt="" /></p>
+      </div>
+      <form id="newTodo">
+        <label for="checkbox"></label>
+        <input type="checkbox" name="" id="checkbox" />
+        <label for="nameNewTask"></label>
+        <input
+          type="text"
+          name="nameNewTask"
+          id="nameNewTask"
+          placeholder="Créer une nouvelle tâche..."
+        />
+        <button type="submit" id="submitTask" disabled>+</button>
+      </form>
+    </header>
+    <main>
+      <ul id="listTask">
+        <li class="task modelTask">
+          <article id="task">
+            <label class="labelCheckbox" for="checkbox"></label>
+            <input
+              class="inputCheckbox"
+              type="checkbox"
+              name="checkbox"
+              id="checkbox"
+            />
+            <label class="labelText" for="text"></label>
+            <input
+              class="inputText"
+              type="text"
+              name="text"
+              id="text"
+              placeholder="Testez l'application Todo List"
+            />
+            <img
+              class="inputImg"
+              src="./public/assets/img/icon-cross.svg"
+              alt=""
+            />
+          </article>
+        </li>
+        <li class="info">
+          <article>
+            <p><span id="rest">5</span> tâches restantes</p>
+            <button id="clearCompleted" type="button">Supprimer tâches terminées</button>
+          </article>
+        </li>
+        <li class="buttons" id="buttonsDisplay">
+          <article>
+            <button id="all" type="button" class="btnActive">Toutes</button>
+            <button id="active" type="button">Active</button>
+            <button id="completed" type="button">Complété</button>
+          </article>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <p id="copyright"><span>&copy; 2023 alicia-88</span></p>
+    </footer>
+  </body>
+</html>
